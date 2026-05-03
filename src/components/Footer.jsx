@@ -120,6 +120,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-black dark:text-white">
               Social link
             </h3>
+            
 
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Get summer deals in your inbox.
