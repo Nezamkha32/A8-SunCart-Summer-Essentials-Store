@@ -31,28 +31,28 @@ const Footer = () => {
                 className="dark:brightness-200"
               />
               <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
-                pixgen
+                Summer Products
               </h2>
             </div>
 
             <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-xs">
-              Create production-ready AI visuals in seconds. Built for speed,
-              scale, and creativity.
+             Your one-stop shop for summer essentials. Discover stylish
+            accessories, beach gear, and skincare products perfect for sunny days.
             </p>
           </div>
 
           {/* Product */}
           <div>
             <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
-              Product
+              Quick Links
             </h3>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link
-                  href="/generate"
+                  href="/home"
                   className="hover:text-black dark:hover:text-white transition"
                 >
-                  Generate
+                  Home
                 </Link>
               </li>
               <li>
@@ -60,15 +60,23 @@ const Footer = () => {
                   href="/all-photos"
                   className="hover:text-black dark:hover:text-white transition"
                 >
-                  Gallery
+                  Products
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/pricing"
+                  href="/my-profile"
                   className="hover:text-black dark:hover:text-white transition"
                 >
-                  Pricing
+                  My Profile
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-black dark:hover:text-white transition"
+                >
+                 Contact
                 </Link>
               </li>
             </ul>
@@ -110,11 +118,11 @@ const Footer = () => {
           {/* CTA Block */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-black dark:text-white">
-              Start creating
+              Social link
             </h3>
 
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Generate your first AI image today.
+              Get summer deals in your inbox.
             </p>
 
             <Link
@@ -124,9 +132,12 @@ const Footer = () => {
               text-sm font-medium transition-all duration-200 
               hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10"
             >
-              Get Started
+              Buy Now
             </Link>
           </div>
+
+
+
         </div>
 
         {/* Divider */}
@@ -134,7 +145,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-          <p>© {new Date().getFullYear()} pixgen. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sun-cart All rights reserved.</p>
 
           <div className="flex items-center gap-6">
             <Link
@@ -157,3 +168,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
