@@ -1,7 +1,7 @@
 import PhotoCard from "./PhotoCard";
 
 const TopGenerations = async () => {
-    const res = await fetch('http://localhost:3000//data.json')
+    const res = await fetch('https://a8-sun-cart-summer-essentials-store.vercel.app/data.json')
     const photos = await res.json()
     const topPhotos = photos.slice(0, 3)
 

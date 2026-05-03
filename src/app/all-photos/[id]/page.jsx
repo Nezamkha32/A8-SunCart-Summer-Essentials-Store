@@ -8,7 +8,7 @@ const PhotoDetailsPage = async ({ params }) => {
 
   const { id } = await params;
 
-  const res = await fetch("http://localhost:3000/data.json", {
+  const res = await fetch("https://a8-sun-cart-summer-essentials-store.vercel.app/data.json", {
     cache: "no-store",
   });
 
