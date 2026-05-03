@@ -8,11 +8,21 @@ const PhotoDetailsPage = async ({ params }) => {
 
   const { id } = await params;
 
-  const res = await fetch("https://a8-sun-cart-summer-essentials-store.vercel.app/data.json", {
-    cache: "no-store",
-  });
+const res = await fetch('https://a8-sun-cart-summer-essentials-store.vercel.app/data.json');
 
-  const photos = await res.json();
+if (!res.ok) {
+  throw new Error("Failed to load photos");
+}
+
+const text = await res.text();
+
+let photos = [];
+
+try {
+  photos = JSON.parse(text);
+} catch (err) {
+  console.log("Invalid JSON response:", text);
+}
   const photo = photos.find((p) => p.id == id);
 
   if (!photo) {
