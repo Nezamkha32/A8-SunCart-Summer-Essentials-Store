@@ -3,24 +3,29 @@
 import { UpdateUserModal } from "@/components/UpdateUserModal";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Card } from "@heroui/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const ProfilePage = () => {
   const { data, isPending } = authClient.useSession();
   const user = data?.user;
 
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isPending && !user) {
+      router.push("/login");
+    }
+  }, [user, isPending, router]);
+
   if (isPending) {
     return <p className="text-center mt-10">Loading...</p>;
-  }
-
-  if (!user) {
-    redirect("/login");
   }
 
   return (
     <div className="py-10">
       <Card className="max-w-96 mx-auto flex flex-col items-center border p-6 gap-3">
-        
+
         <Avatar className="h-20 w-20">
           <Avatar.Image
             alt={user?.name}
@@ -36,6 +41,7 @@ const ProfilePage = () => {
         <p className="text-muted-foreground">{user?.email}</p>
 
         <UpdateUserModal />
+
       </Card>
     </div>
   );
